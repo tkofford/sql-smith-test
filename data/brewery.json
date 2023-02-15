@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Free State Brewing Company",
+    "city": "Lawrence",
+    "state": "KS",
+    "year_opened": 1989,
+    "type": "Brewpub"
+  },
+  {
+    "name": "23rd Street Brewery",
+    "city": "Lawrence",
+    "state": "KS",
+    "year_opened": 2006,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Augustino Brewing Company",
+    "city": "Wichita",
+    "state": "KS",
+    "year_opened": 2017,
+    "type": "Brewpub"
+  },
+  {
+    "name": "15-24 Brew House",
+    "city": "Clay Center",
+    "state": "KS",
+    "year_opened": 2018,
+    "type": "Brewpub"
+  },
+  {
+    "name": "The Black Stag Brewery",
+    "city": "Lawrence",
+    "state": "KS",
+    "year_opened": 2018,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Blind Tiger Brewery",
+    "city": "Topeka",
+    "state": "KS",
+    "year_opened": 2001,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Blue Skye Brewery",
+    "city": "Salina",
+    "state": "KS",
+    "year_opened": 2013,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Brew Lab",
+    "city": "Overland Park",
+    "state": "KS",
+    "year_opened": 2014,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Central Standard Brewing",
+    "city": "Wichita",
+    "state": "KS",
+    "year_opened": 2015,
+    "type": "Taproom"
+  },
+  {
+    "name": "Defiance Brewing Co.",
+    "city": "Hays",
+    "state": "KS",
+    "year_opened": 2017,
+    "type": "Micro"
+  },
+  {
+    "name": "Dodge City Brewing",
+    "city": "Dodge City",
+    "state": "KS",
+    "year_opened": 2018,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Fields & Ivy Brewery",
+    "city": "Lawrence",
+    "state": "KS",
+    "year_opened": 2019,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Flat Mountain Brewhouse",
+    "city": "Garden City",
+    "state": "KS",
+    "year_opened": 2019,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Fly Boy Brewery & Eats",
+    "city": "Sylvan Grove",
+    "state": "KS",
+    "year_opened": 2014,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Hank Is Wiser Brewery",
+    "city": "Cheney",
+    "state": "KS",
+    "year_opened": 2005,
+    "type": "Brewpub"
+  },
+  {
+    "name": "Happy Basset Brewing Company",
+    "city": "Topeka",
+    "state": "KS",
+    "year_opened": 2014,
+    "type": "Taproom"
+  }
+]

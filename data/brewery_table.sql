@@ -1,0 +1,7 @@
+CREATE TABLE brewery (
+    NAME TEXT,
+    CITY TEXT,
+    STATE TEXT,
+    YEAR_OPENED INT,
+    TYPE TEXT
+)
