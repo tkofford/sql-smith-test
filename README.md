@@ -1,45 +1,3 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
-
-# NGSL-API-EXTRENAL
-Next Generation Service Layer (NGSL) API. This is an EFM external API which EFM clients use to retrieve data
-from the Enterprise Data Warehouse (EDW).
-
-## Application structure
-The application is an AWS API-Gateway/Lambda function written in Python 3.7+. It uses the following components some of
-which are included as stand-alone libraries and some as lambda layers (bundles of stand-alone libraries) as appropriate:
-- **Snowflake DB** (Library) - Database driver
-- **CyberArk** (Lambda Layer) - Encrypted secrets store for snowflake credentials
-- **Lambda Powertools Python** (Library) - A suite of utilities for AWS Lambda functions to ease adopting best practices
-such as tracing, structured logging, custom metrics, idempotency, batching, and more.
-
-### Cloud9 Setup
-We are using Cloud9 for development, and there are a few things that need to be done in order to be able to access the
-given resources like CyberArk & Snowflake.
-
-### AWS Credentials
-It is assumed that users have the ***aws-azure-login*** node utility on their local system. Users must run that utility
-to generate fresh credentials. The "credentials" file is generated in the <USER_HONME>/.aws directory
-
-### Environment Setup
-1. Create a new environment for the project in the Ohio (us-east-2) region, using mostly default settings
-2. Specify **CFN-EFM-NonProd-VPC** for the VPC
-3. Specify **snowflake-poc-subnetC** for the Subnet
-4. After the environment is created, the storage needs to be expanded to allow for the size of the "AWS Toolkit"
-   1. Run the "env_utils/resize.sh" script from the project in the terminal window.
-
 ### Python Virtual Environment Setup
 In order to use a more current version of python (version 3.8) rather than the old default version in cloud9, EC2 instance, we 
 will use the **virtualenv** tool. This allows us to create a python virtual environment that matches the python 
@@ -120,25 +78,3 @@ export LD_LIBRARY_PATH="/usr/local/lib"
 (venv) POC-Role:~/environment (master) $ sqlite3 --version
 3.39.4 2022-09-29 15:55:41 a29f9949895322123f7c38fbe94c649a9d6e6c9cd0c3b41c96d694552f26b309
 ```
-
-### Make File for "making" life easier ;-)
-The Makefile was created to help make command line tasks easier/shorter.
-
-### Testing
-#### Running Automated (pytest) tests:
-    $ python -m pytest tests/unit/
-
-#### Testing SAM events:
-    $ make clean
-    $ make build
-    $ make invoke-customers
-    $ make invoke-vehicles
-
-### Troubleshooting
-#### Out of Space
-Sometimes the EC2 instance will run out of user storage and will need to be cleaned up. This is usually due to logs or 
-docker images after excessive usage.
-- For cleaning up docker images, please see: [How to clean up aws ec2 server?](https://stackoverflow.com/questions/54814222/how-to-clean-up-aws-ec2-server)
-
-Connect to instance:
-    $ sudo -u ec2-user -i
