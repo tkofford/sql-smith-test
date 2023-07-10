@@ -112,12 +112,26 @@ def test_build_query3(db):
 
 
 @pytest.mark.usefixtures("setup")
-def test_build_nested_query(db):
+def test_build_nested_query_in_from_clause(db):
     #  See https://fbraem.github.io/sql-smith/functions.html for sql-smith documentation
     factory = QueryFactory(BasicEngine())
 
     nested_query = factory.select().from_("brewery").where(field("city").eq("Lawrence"))
     outside_query = factory.select("brew.name").from_(alias(express("({})", nested_query), "brew"))
+    query = outside_query.compile()
+    print(query.sql)
+    print(query.params)
+    result = db.query_with_cols(query.sql, query.params)
+    print(result)
+
+
+@pytest.mark.usefixtures("setup")
+def test_build_nested_query_in_where_clause(db):
+    #  See https://fbraem.github.io/sql-smith/functions.html for sql-smith documentation
+    factory = QueryFactory(BasicEngine())
+
+    nested_query = factory.select("year_opened").distinct(True).from_("brewery").where(field("city").eq("Dodge City"))
+    outside_query = factory.select("name, year_opened").from_("brewery").where(field("year_opened").in_(express("{}", nested_query)))
     query = outside_query.compile()
     print(query.sql)
     print(query.params)
